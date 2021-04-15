@@ -19,19 +19,36 @@ function validaCartas(jogador) {
  
     if (jogador.cartas[0].numero === 10 && jogador.cartas[1].numero === 12 && 
         jogador.cartas[2].numero === 13 && jogador.cartas[3].numero === 1 &&
-        jogador.cartas[0, 1, 2, 3, 4].naipe === "ouros" ||
-        jogador.cartas[0, 1, 2, 3, 4].naipe === "paus" ||
-        jogador.cartas[0, 1, 2, 3, 4].naipe === "espadas" ||
-        jogador.cartas[0, 1, 2, 3, 4].naipe === "copas"){
+        jogador.cartas[0].naipe === "ouros" && jogador.cartas[1].naipe === "ouros" && 
+        jogador.cartas[2].naipe === "ouros" && jogador.cartas[3].naipe === "ouros" &&
+        jogador.cartas[4].naipe === "ouros" ||
+        jogador.cartas[0].naipe === "paus" && jogador.cartas[1].naipe === "paus" && 
+        jogador.cartas[2].naipe === "paus" && jogador.cartas[3].naipe === "paus" &&
+        jogador.cartas[4].naipe === "paus" || 
+        jogador.cartas[0].naipe === "espadas" && jogador.cartas[1].naipe === "espadas" && 
+        jogador.cartas[2].naipe === "espadas" && jogador.cartas[3].naipe === "espadas" &&
+        jogador.cartas[4].naipe === "espadas" || 
+        jogador.cartas[0].naipe === "copas" && jogador.cartas[1].naipe === "copas" && 
+        jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas" &&
+        jogador.cartas[4].naipe === "copas"){
+
 
             jogador.resultaMao = 10 // royal flush
 
         } else if (jogador.cartas[0].numero > jogador.cartas[1].numero >
             jogador.cartas[2].numero > jogador.cartas[3].numero > jogador.cartas[4].numero &&
-            jogador.cartas[0, 1, 2, 3, 4].naipe === "ouros" ||
-            jogador.cartas[0, 1, 2, 3, 4].naipe === "paus" ||
-            jogador.cartas[0, 1, 2, 3, 4].naipe === "espadas" ||
-            jogador.cartas[0, 1, 2, 3, 4].naipe === "copas"){
+            jogador.cartas[0].naipe === "ouros" && jogador.cartas[1].naipe === "ouros" && 
+            jogador.cartas[2].naipe === "ouros" && jogador.cartas[3].naipe === "ouros" &&
+            jogador.cartas[4].naipe === "ouros" ||
+            jogador.cartas[0].naipe === "paus" && jogador.cartas[1].naipe === "paus" && 
+            jogador.cartas[2].naipe === "paus" && jogador.cartas[3].naipe === "paus" &&
+            jogador.cartas[4].naipe === "paus" || 
+            jogador.cartas[0].naipe === "espadas" && jogador.cartas[1].naipe === "espadas" && 
+            jogador.cartas[2].naipe === "espadas" && jogador.cartas[3].naipe === "espadas" &&
+            jogador.cartas[4].naipe === "espadas" || 
+            jogador.cartas[0].naipe === "copas" && jogador.cartas[1].naipe === "copas" && 
+            jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas" &&
+            jogador.cartas[4].naipe === "copas"){
 
             jogador.resultadoMao = 9 // straught flush
 
@@ -49,10 +66,18 @@ function validaCartas(jogador) {
 
                 jogador.resultaMao = 7 // full house    
 
-        } else if (jogador.cartas[0, 1, 2, 3, 4].naipe === "ouros" ||
-                jogador.cartas[0, 1, 2, 3, 4].naipe === "paus" ||
-                jogador.cartas[0, 1, 2, 3, 4].naipe === "espadas" ||
-                jogador.cartas[0, 1, 2, 3, 4].naipe === "copas"){
+        } else if (jogador.cartas[0].naipe === "ouros" && jogador.cartas[1].naipe === "ouros" && 
+        jogador.cartas[2].naipe === "ouros" && jogador.cartas[3].naipe === "ouros" &&
+        jogador.cartas[4].naipe === "ouros" ||
+        jogador.cartas[0].naipe === "paus" && jogador.cartas[1].naipe === "paus" && 
+        jogador.cartas[2].naipe === "paus" && jogador.cartas[3].naipe === "paus" &&
+        jogador.cartas[4].naipe === "paus" || 
+        jogador.cartas[0].naipe === "espadas" && jogador.cartas[1].naipe === "espadas" && 
+        jogador.cartas[2].naipe === "espadas" && jogador.cartas[3].naipe === "espadas" &&
+        jogador.cartas[4].naipe === "espadas" || 
+        jogador.cartas[0].naipe === "copas" && jogador.cartas[1].naipe === "copas" && 
+        jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas" &&
+        jogador.cartas[4].naipe === "copas"){
                  
                     jogador.resultaMao = 6 // flush
 
@@ -77,16 +102,16 @@ function validaCartas(jogador) {
 
                     jogador.resultaMao = 3 // dois pares
 
-        } else if (player1.cartas[0] === player1.cartas[1] || 
-                player1.cartas[0] === player1.cartas[2] || 
-                player1.cartas[0] === player1.cartas[3] || 
-                player1.cartas[0] === player1.cartas[4] ||
-                player1.cartas[1] === player1.cartas[2] || 
-                player1.cartas[1] === player1.cartas[3] || 
-                player1.cartas[1] === player1.cartas[4] || 
-                player1.cartas[2] === player1.cartas[3] || 
-                player1.cartas[2] === player1.cartas[4] || 
-                player1.cartas[3] === player1.cartas[4]){ 
+        } else if (jogador.cartas[0] === jogador.cartas[1] || 
+                jogador.cartas[0] === jogador.cartas[2] || 
+                jogador.cartas[0] === jogador.cartas[3] || 
+                jogador.cartas[0] === jogador.cartas[4] ||
+                jogador.cartas[1] === jogador.cartas[2] || 
+                jogador.cartas[1] === jogador.cartas[3] || 
+                jogador.cartas[1] === jogador.cartas[4] || 
+                jogador.cartas[2] === jogador.cartas[3] || 
+                jogador.cartas[2] === jogador.cartas[4] || 
+                jogador.cartas[3] === jogador.cartas[4]){ 
 
                     jogador.resultaMao = 2 // par
 
