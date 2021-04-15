@@ -1,99 +1,106 @@
-const player1 = {
+const jogador2= {
     cartas: [
         {numero: 5, naipe: "copas"}, {numero: 5, naipe: "paus"}, {numero: 6, naipe: "espadas"},
-        {numero: 7, naipe: "espadas"}, {numero:"13", naipe: "ouros"}
-    ]
+        {numero: 7, naipe: "espadas"}, {numero: 13, naipe: "ouros"}
+    ],
+    resultaMao: 0
 
 }
 
-const player2 = {
+const jogador1 = {
     cartas: [
         {numero: 2, naipe: "paus"}, {numero: 3, naipe: "espadas"}, {numero: 8, naipe: "espadas"},
         {numero: 8, naipe: "ouros"}, {numero: 12, naipe: "ouros"}
-    ]
+    ],
+    resultaMao: 0
 }
 
-// definindo jogada player 1
-function validaCartas1(cartas) {
+function validaCartas(jogador) {
+ 
+    if (jogador.cartas[0].numero === 10 && jogador.cartas[1].numero === 12 && 
+        jogador.cartas[2].numero === 13 && jogador.cartas[3].numero === 1 &&
+        jogador.cartas[0, 1, 2, 3, 4].naipe === "ouros" ||
+        jogador.cartas[0, 1, 2, 3, 4].naipe === "paus" ||
+        jogador.cartas[0, 1, 2, 3, 4].naipe === "espadas" ||
+        jogador.cartas[0, 1, 2, 3, 4].naipe === "copas"){
+
+            jogador.resultaMao = 10 // royal flush
+
+        } else if (jogador.cartas[0].numero > jogador.cartas[1].numero >
+            jogador.cartas[2].numero > jogador.cartas[3].numero > jogador.cartas[4].numero &&
+            jogador.cartas[0, 1, 2, 3, 4].naipe === "ouros" ||
+            jogador.cartas[0, 1, 2, 3, 4].naipe === "paus" ||
+            jogador.cartas[0, 1, 2, 3, 4].naipe === "espadas" ||
+            jogador.cartas[0, 1, 2, 3, 4].naipe === "copas"){
+
+            jogador.resultadoMao = 9 // straught flush
+
+        } else if (jogador.cartas[0].numero === jogador.cartas[1] &&
+            jogador.cartas[1].numero === jogador.numero[2].numero && 
+            jogador.cartas[2].numero === jogador.numero[3] ||
+            jogador.cartas[1].numero === jogador.cartas[2].numero &&
+            jogador.cartas[2].numero === jogador.cartas[3].numero &&
+            jogador.cartas[3].numero === jogador.cartas[4].numero) {
+                
+                jogador.resultaMao = 8 // quadra
+            
+        } else if (jogador.cartas[0].numero === jogador.cartas[1].numero === jogador.cartas[2] &&
+            jogador.cartas[3].numero === jogador.cartas[4].numero) {
+
+                jogador.resultaMao = 7 // full house    
+
+        } else if (jogador.cartas[0, 1, 2, 3, 4].naipe === "ouros" ||
+                jogador.cartas[0, 1, 2, 3, 4].naipe === "paus" ||
+                jogador.cartas[0, 1, 2, 3, 4].naipe === "espadas" ||
+                jogador.cartas[0, 1, 2, 3, 4].naipe === "copas"){
+                 
+                    jogador.resultaMao = 6 // flush
+
+        } else if (jogador.cartas[0].numero > jogador.cartas[1].numero >
+                jogador.cartas[2].numero > jogador.cartas[3].numero > jogador.cartas[4].numero) {
+
+                    jogador.resultaMao = 5 //straight
+
+        } else if (jogador.cartas[0].numero === jogador.cartas[1].numero && 
+                jogador.cartas[1].numero === jogador.cartas[2].numero &&
+                jogador.cartas[3].numero != jogador.cartas[4] || 
+                jogador.cartas[0].numeros != jogador.cartas[1].numeros &&
+                jogador.cartas[2].numeros === jogador.cartas[3].numeros &&
+                jogador.cartas[3].numeros === jogador.cartas[4].numeros){
+
+                    jogador.resultaMao = 4 // trinca
+        
+        } else if (jogador.cartas[0].numeros === jogador.cartas[1].numeros &&
+                jogador.cartas[2].numeros === jogador.cartas[3].numeros ||
+                jogador.cartas[1].numeros === jogador.cartas[2].numeros &&
+                jogador.cartas[3].numeros === jogador.cartas[4].numeros) {
+
+                    jogador.resultaMao = 3 // dois pares
+
+        } else if (player1.cartas[0] === player1.cartas[1] || 
+                player1.cartas[0] === player1.cartas[2] || 
+                player1.cartas[0] === player1.cartas[3] || 
+                player1.cartas[0] === player1.cartas[4] ||
+                player1.cartas[1] === player1.cartas[2] || 
+                player1.cartas[1] === player1.cartas[3] || 
+                player1.cartas[1] === player1.cartas[4] || 
+                player1.cartas[2] === player1.cartas[3] || 
+                player1.cartas[2] === player1.cartas[4] || 
+                player1.cartas[3] === player1.cartas[4]){ 
+
+                    jogador.resultaMao = 2 // par
+
+                } else { jogador.resultaMao = 1}
+
+                   
+            }
+validaCartas(jogador1)
+validaCartas(jogador2)
+
+    if (jogador1.resultaMao > jogador2.resultaMao) {
+        console.log("jogador 1 venceu")
+    } else {
+        console.log("jogador 2 venceu")
+    }
+
     
-    if (player1.cartas[0] === 10 && player1.cartas[1] === 11 && player1.cartas[2] === 12 && player1.cartas[3] === 13 && player1.cartar[4] === "as" && // numeros royal flush
-    player1.cartas[0, 1, 2, 3 ,4] === "ouros"  
-    || player1.cartas[0, 1, 2, 3, 4] === "copas" 
-    || player1.cartas[0, 1, 2, 3, 4] === "paus" 
-    || player1.cartas[0, 1, 2, 3, 4] === "espadas" 
-    || player1.cartas[0, 1, 2, 3, 4] === "espadas") { // nipes royal flush
-        player1.resultadoDaMao = 10 //"Royal Flush"
-    } else if (player1.cartas[0] > player1.cartas[1] && player1.cartas[1] > player1.cartas[2] && player1.cartas[3] > player1.cartas[4]){ // usar for
-        player1.resultadoDaMao = 9 //"straight flush"
-    } else if (player1.cartas[0] === player1.cartas[1] && player1.cartas[2] === player1.cartas[3] || player1.cartas[4]) {
-    player1.resultadoDaMao = 8 //"Quadra"
-    } else if (player1.cartas[0] === player1.cartas[1] === player1.cartas[2] && player1.cartas[3] === player1.cartas[4] 
-            || player1.cartas[0] === player1.cartas[1] && player1.cartas[2] === player1.cartas[3] === player1.cartas[4]){
-        player1.resultadoDaMao = 7 //"Full House"
-    } else if (player1.cartas[0] === player1.cartas[1]  === player1.cartas[2] === player1.cartas[3] === player1.cartas[4]){
-        player1.resultadoDaMao = 6 //"flush"
-    } else if (player1.cartas[0] < player1.cartas[1] && player1.cartas[1] < player1.cartas[2] && player1.cartas[3] < player1.cartas[4]) { // usar for
-        player1.resultadoDaMao = 5 //"Sequencia"
-    } else if (player1.cartas[0] === player1.cartas[1] === player1.cartas[2] && player1.cartas[3] != player1.cartas[0]){
-         player1.resultadoDaMao = 4 //"Trinca"        
-    } else if (player1.cartas[0] === player1.cartas[1] && player1.cartas[2] === player1.cartas[3] || player1.cartas[4]
-            || player1.cartas[1] === player1.cartas[2] && player1.cartas[3] === player1.cartas[4]) {
-        player1.resultadoDaMao = 3 //"dois pares" 
-    } else if (player1.cartas[0] === player1.cartas[1] || player1.cartas[0] === player1.cartas[2] || player1.cartas[0] === player1.cartas[3] || player1.cartas[0] === player1.cartas[4] ||
-        player1.cartas[1] === player1.cartas[2] || player1.cartas[1] === player1.cartas[3] || player1.cartas[1] === player1.cartas[4] || 
-        player1.cartas[2] === player1.cartas[3] || player1.cartas[2] === player1.cartas[4] || 
-        player1.cartas[3] === player1.cartas[4]){
-            player1.resultadoDaMao = 2 //"um par"
-        } else {player1.cartas[0] >= player1.cartas[1] || player1.cartas[1] >= player1.cartas[2] || player1.cartas[3] >= player1.cartas[4]
-            player1.resultadoDaMao = 1 }// carta mais alta 
-
-} 
-// definindo jogada player 2
-function validaCartas2(cartas) {
-    
-    if (player2.cartas[0] === 10 && player2.cartas[1] === 11 && player2.cartas[2] === 12 && player2.cartas[3] === 13 && player2.cartar[4] === "as" && // numeros royal flush
-    player2.cartas[0, 1, 2, 3 ,4] === "ouros"  
-    || player2.cartas[0, 1, 2, 3, 4] === "copas" 
-    || player2.cartas[0, 1, 2, 3, 4] === "paus" 
-    || player2.cartas[0, 1, 2, 3, 4] === "espadas" 
-    || player2.cartas[0, 1, 2, 3, 4] === "espadas") { // nipes royal flush
-        player2.resultadoDaMao = 10 //"Royal Flush"
-    } else if (player2.cartas[0] < player2.cartas[1] && player2.cartas[1] < player2.cartas[2] && player2.cartas[3] < player2.cartas[4])
-    { // usar for
-        player2.resultadoDaMao = 9 //"straight flush"
-    } else if (player2.cartas[0] === player2.cartas[1] && player2.cartas[2] === player2.cartas[3] || player2.cartas[4]) {
-    player2.resultadoDaMao = 8 //"Quadra"
-    } else if (player2.cartas[0] === player2.cartas[1] === player2.cartas[2] && player2.cartas[3] === player2.cartas[4] 
-            || player2.cartas[0] === player2.cartas[1] && player2.cartas[2] === player2.cartas[3] === player2.cartas[4]){
-        player2.resultadoDaMao = 7 //"Full House"
-    } else if (player2.cartas[0] === player2.cartas[1]  === player2.cartas[2] === player2.cartas[3] === player2.cartas[4]){
-        player2.resultadoDaMao = 6 //"flush"
-    } else if (player2.cartas[0] < player2.cartas[1] && player2.cartas[1] < player2.cartas[2] && player2.cartas[3] < player2.cartas[4]) { // usar for
-        player2.resultadoDaMao = 5 //"Sequencia"
-    } else if (player2.cartas[0] === player2.cartas[1] === player2.cartas[2] && player2.cartas[3] != player2.cartas[0]){
-         player2.resultadoDaMao = 4 //"Trinca"        
-    } else if (player2.cartas[0] === player2.cartas[1] && player2.cartas[2] === player2.cartas[3] || player2.cartas[4]
-            || player2.cartas[1] === player2.cartas[2] && player2.cartas[3] === player2.cartas[4]) {
-        player2.resultadoDaMao = 3 //"dois pares" 
-    } else if (player2.cartas[0] === player2.cartas[1] || player2.cartas[0] === player2.cartas[2] || player2.cartas[0] === player2.cartas[3] || player2.cartas[0] === player2.cartas[4] ||
-        player2.cartas[1] === player2.cartas[2] || player2.cartas[1] === player2.cartas[3] || player2.cartas[1] === player2.cartas[4] || 
-        player2.cartas[2] === player2.cartas[3] || player2.cartas[2] === player2.cartas[4] || 
-        player2.cartas[3] === player2.cartas[4]){
-            player2.resultadoDaMao = 2 //"um par"
-        } else {player2.cartas[0] >= player2.cartas[1] || player2.cartas[1] >= player2.cartas[2] || player2.cartas[3] >= player2.cartas[4]
-            player2.resultadoDaMao = 1 }// carta mais alta 
-
-        }  
-player1.cartas.forEach((carta, index) => {
-    console.log(`player 1 o numero da carta é ${index + 1} é ${carta.numero} e o naipe é ${carta.naipe}`)
-});
-player2.cartas.forEach((carta, index) => {
-    console.log(`player 2 o numero da carta é ${index + 1} é ${carta.numero} e o naipe é ${carta.naipe}`)
-});
-
-// definindo quem ganhou 
-if (player1.resultaDaMao > player2.resultadoDaMao) {
-    console.log("jogador 1 venceu")
-} else {
-    console.log("jogador 2 venceu")
-}
