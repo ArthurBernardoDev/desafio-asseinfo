@@ -1,6 +1,6 @@
 const jogador2= {
     cartas: [
-        {numero: 5, naipe: "copas"}, {numero: 5, naipe: "paus"}, {numero: 6, naipe: "espadas"},
+        {numero: 8, naipe: "copas"}, {numero: 5, naipe: "paus"}, {numero: 6, naipe: "espadas"},
         {numero: 7, naipe: "espadas"}, {numero: 13, naipe: "ouros"}
     ],
     resultaMao: 0
@@ -31,7 +31,7 @@ function validaCartas(jogador) {
         jogador.cartas[0].naipe === "copas" && jogador.cartas[1].naipe === "copas" && 
         jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas" &&
         jogador.cartas[4].naipe === "copas"){
-
+            console.log("royal flush")
 
             jogador.resultaMao = 10 // royal flush
 
@@ -50,6 +50,7 @@ function validaCartas(jogador) {
             jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas" &&
             jogador.cartas[4].naipe === "copas"){
 
+                console.log("straught flush")
             jogador.resultadoMao = 9 // straught flush
 
         } else if (jogador.cartas[0].numero === jogador.cartas[1] &&
@@ -58,12 +59,12 @@ function validaCartas(jogador) {
             jogador.cartas[1].numero === jogador.cartas[2].numero &&
             jogador.cartas[2].numero === jogador.cartas[3].numero &&
             jogador.cartas[3].numero === jogador.cartas[4].numero) {
-                
+                console.log("quadra")
                 jogador.resultaMao = 8 // quadra
             
         } else if (jogador.cartas[0].numero === jogador.cartas[1].numero === jogador.cartas[2] &&
             jogador.cartas[3].numero === jogador.cartas[4].numero) {
-
+                console.log("full house")
                 jogador.resultaMao = 7 // full house    
 
         } else if (jogador.cartas[0].naipe === "ouros" && jogador.cartas[1].naipe === "ouros" && 
@@ -78,41 +79,41 @@ function validaCartas(jogador) {
         jogador.cartas[0].naipe === "copas" && jogador.cartas[1].naipe === "copas" && 
         jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas" &&
         jogador.cartas[4].naipe === "copas"){
-                 
+            console.log("flush")
                     jogador.resultaMao = 6 // flush
 
         } else if (jogador.cartas[0].numero > jogador.cartas[1].numero >
                 jogador.cartas[2].numero > jogador.cartas[3].numero > jogador.cartas[4].numero) {
-
+                    console.log("sequencia")
                     jogador.resultaMao = 5 //straight
 
         } else if (jogador.cartas[0].numero === jogador.cartas[1].numero && 
                 jogador.cartas[1].numero === jogador.cartas[2].numero &&
                 jogador.cartas[3].numero != jogador.cartas[4] || 
-                jogador.cartas[0].numeros != jogador.cartas[1].numeros &&
-                jogador.cartas[2].numeros === jogador.cartas[3].numeros &&
-                jogador.cartas[3].numeros === jogador.cartas[4].numeros){
-
+                jogador.cartas[0].numero != jogador.cartas[1].numero &&
+                jogador.cartas[2].numero === jogador.cartas[3].numero &&
+                jogador.cartas[3].numero === jogador.cartas[4].numero){
+                    console.log("trinca")
                     jogador.resultaMao = 4 // trinca
         
-        } else if (jogador.cartas[0].numeros === jogador.cartas[1].numeros &&
-                jogador.cartas[2].numeros === jogador.cartas[3].numeros ||
-                jogador.cartas[1].numeros === jogador.cartas[2].numeros &&
-                jogador.cartas[3].numeros === jogador.cartas[4].numeros) {
-
+        } else if (jogador.cartas[0].numero === jogador.cartas[1].numero &&
+                jogador.cartas[2].numero === jogador.cartas[3].numero && jogador.cartas[4].numero ||
+                jogador.cartas[0].numero != jogador.cartas[1].numero === jogador.cartas[2].numero &&
+                jogador.cartas[3].numero === jogador.cartas[4].numero) {
+                    console.log("2 pares")
                     jogador.resultaMao = 3 // dois pares
 
-        } else if (jogador.cartas[0] === jogador.cartas[1] || 
-                jogador.cartas[0] === jogador.cartas[2] || 
-                jogador.cartas[0] === jogador.cartas[3] || 
-                jogador.cartas[0] === jogador.cartas[4] ||
-                jogador.cartas[1] === jogador.cartas[2] || 
-                jogador.cartas[1] === jogador.cartas[3] || 
-                jogador.cartas[1] === jogador.cartas[4] || 
-                jogador.cartas[2] === jogador.cartas[3] || 
-                jogador.cartas[2] === jogador.cartas[4] || 
-                jogador.cartas[3] === jogador.cartas[4]){ 
-
+        } else if (jogador.cartas[0].numero === jogador.cartas[1].numero || 
+                jogador.cartas[0].numero === jogador.cartas[2].numero || 
+                jogador.cartas[0].numero === jogador.cartas[3].numero || 
+                jogador.cartas[0].numero === jogador.cartas[4].numero ||
+                jogador.cartas[1].numero === jogador.cartas[2].numero || 
+                jogador.cartas[1].numero === jogador.cartas[3].numero || 
+                jogador.cartas[1].numero === jogador.cartas[4].numero || 
+                jogador.cartas[2].numero === jogador.cartas[3].numero || 
+                jogador.cartas[2].numero === jogador.cartas[4].numero || 
+                jogador.cartas[3].numero === jogador.cartas[4].numero ){ 
+                    console.log("par")
                     jogador.resultaMao = 2 // par
 
                 } else { jogador.resultaMao = 1}
