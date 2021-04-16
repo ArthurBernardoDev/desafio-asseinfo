@@ -1,7 +1,7 @@
 const jogador2= {
     cartas: [
-        {numero: 8, naipe: "copas"}, {numero: 5, naipe: "paus"}, {numero: 6, naipe: "espadas"},
-        {numero: 7, naipe: "espadas"}, {numero: 13, naipe: "ouros"}
+        {numero: 3, naipe: "copas"}, {numero: 3, naipe: "paus"}, {numero: 6, naipe: "espadas"},
+        {numero: 8, naipe: "espadas"}, {numero: 8, naipe: "ouros"}
     ],
     resultaMao: 0
 
@@ -97,7 +97,7 @@ function validaCartas(jogador) {
                     jogador.resultaMao = 4 // trinca
         
         } else if (jogador.cartas[0].numero === jogador.cartas[1].numero &&
-                jogador.cartas[2].numero === jogador.cartas[3].numero && jogador.cartas[4].numero ||
+                jogador.cartas[2].numero === jogador.cartas[3].numero != jogador.cartas[4].numero ||
                 jogador.cartas[0].numero != jogador.cartas[1].numero === jogador.cartas[2].numero &&
                 jogador.cartas[3].numero === jogador.cartas[4].numero) {
                     console.log("2 pares")
