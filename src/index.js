@@ -1,7 +1,7 @@
 const jogador2= {
     cartas: [
-        {numero: 3, naipe: "copas"}, {numero: 3, naipe: "paus"}, {numero: 6, naipe: "espadas"},
-        {numero: 8, naipe: "espadas"}, {numero: 8, naipe: "ouros"}
+        {numero: 10, naipe: "espadas"}, {numero: 12, naipe: "espadas"}, {numero: 11, naipe: "espadas"},
+        {numero: 13, naipe: "espadas"}, {numero: 1, naipe: "espadas"}
     ],
     resultaMao: 0
 
@@ -17,8 +17,8 @@ const jogador1 = {
 
 function validaCartas(jogador) {
  
-    if (jogador.cartas[0].numero === 10 && jogador.cartas[1].numero === 12 && 
-        jogador.cartas[2].numero === 13 && jogador.cartas[3].numero === 1 &&
+    if (jogador.cartas[0].numero === 10 && jogador.cartas[1].numeros === 12 && jogador.cartas[2].numero === 11 && 
+        jogador.cartas[3].numero === 13 && jogador.cartas[4].numero === 1 &&
         jogador.cartas[0].naipe === "ouros" && jogador.cartas[1].naipe === "ouros" && 
         jogador.cartas[2].naipe === "ouros" && jogador.cartas[3].naipe === "ouros" &&
         jogador.cartas[4].naipe === "ouros" ||
