@@ -1,7 +1,7 @@
 const jogador2= {
     cartas: [
-        {numero: 10, naipe: "espadas"}, {numero: 12, naipe: "espadas"}, {numero: 11, naipe: "espadas"},
-        {numero: 13, naipe: "espadas"}, {numero: 1, naipe: "espadas"}
+        {numero: 2, naipe: "espadas"}, {numero: 5, naipe: "espadas"}, {numero: 2, naipe: "espadas"},
+        {numero: 2, naipe: "espadas"}, {numero: 2, naipe: "copas"}
     ],
     resultaMao: 0
 
@@ -53,11 +53,11 @@ function validaCartas(jogador) {
                 console.log("straught flush")
             jogador.resultadoMao = 9 // straught flush
 
-        } else if (jogador.cartas[0].numero === jogador.cartas[1] &&
-            jogador.cartas[1].numero === jogador.numero[2].numero && 
-            jogador.cartas[2].numero === jogador.numero[3] ||
+        } else if (jogador.cartas[0].numero === jogador.cartas[1].numero && 
+            jogador.cartas[2].numero === jogador.cartas[3].numero ||
             jogador.cartas[1].numero === jogador.cartas[2].numero &&
-            jogador.cartas[2].numero === jogador.cartas[3].numero &&
+            jogador.cartas[3].numero === jogador.cartas[4].numero || 
+            jogador.cartas[0].numero === jogador.cartas[2].numero &&
             jogador.cartas[3].numero === jogador.cartas[4].numero) {
                 console.log("quadra")
                 jogador.resultaMao = 8 // quadra
