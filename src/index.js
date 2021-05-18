@@ -9,7 +9,7 @@ const jogador2= {
 
 const jogador1 = {
     cartas: [
-        {numero: 10, naipe: "paus"}, {numero: 12, naipe: "espadas"}, {numero: 11, naipe: "espadas"},
+        {numero: 10, naipe: "ouros"}, {numero: 12, naipe: "ouros"}, {numero: 11, naipe: "ouros"},
         {numero: 13, naipe: "ouros"}, {numero: 1, naipe: "ouros"}
     ],
     resultaMao: 0
@@ -26,7 +26,19 @@ function validaCartas(jogador)
 
     console.log("RoyaL flush de copas") 
     jogador.resultaMao = 10 
-}
+
+} else if (jogador.cartas[0].numero === 10 && jogador.cartas[1].numero === 12 
+    && jogador.cartas[2].numero === 11 && jogador.cartas[3].numero === 13 
+    && jogador.cartas[4].numero === 1 
+    && jogador.cartas[0].naipe === "ouros" && jogador.cartas[1].naipe === "ouros" 
+    && jogador.cartas[2].naipe === "ouros" && jogador.cartas[3].naipe === "ouros"
+    && jogador.cartas[4].naipe === "ouros") {
+
+        console.log("Royal flush de ouros")
+        jogador.resultaMao = 10
+    }
+
+
 }
 
 // function validaCartas(jogador) {
