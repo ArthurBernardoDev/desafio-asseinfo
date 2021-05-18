@@ -19,10 +19,14 @@ function validaCartas(jogador)
 {
     if (jogador.cartas[0].numero === 10 && jogador.cartas[1].numero === 12 
     && jogador.cartas[2].numero === 11 && jogador.cartas[3].numero === 13 
-    && jogador.cartas[4].numero === 1){
+    && jogador.cartas[4].numero === 1 
+    && jogador.cartas[0].naipe === "copas" && jogador.cartas[1].naipe === "copas" 
+    && jogador.cartas[2].naipe === "copas" && jogador.cartas[3].naipe === "copas"
+    && jogador.cartas[4].naipe === "copas"){
 
     console.log("RoyaL flush de copas") 
-    jogador.resultaMao = 10 }
+    jogador.resultaMao = 10 
+}
 }
 
 // function validaCartas(jogador) {
