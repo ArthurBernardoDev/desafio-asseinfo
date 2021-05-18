@@ -57,8 +57,6 @@ function validaCartas(jogador)
             console.log("Royal flush de paus")
             jogador.resultaMao = 10
         }
-
-
 }
 
 // function validaCartas(jogador) {
